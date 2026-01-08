@@ -4,7 +4,7 @@ const cors = require('cors');
 const shortid = require('shortid');
 require('dotenv').config();
 
-const Url = require('./models/Url'); // Make sure path is correct
+const Url = require('./models/url'); // Make sure path is correct
 
 const app = express();
 
