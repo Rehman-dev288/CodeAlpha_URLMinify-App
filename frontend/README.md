@@ -1,16 +1,31 @@
-# React + Vite
+# 🚀 URLMinify App - Advanced URL Shortener with Analytics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**URL Minify** is a high-performance Full-Stack URL shortening application built with the **MERN Stack**. While part of a Full Stack domain, this project specifically showcases advanced **Backend Engineering** principles, including REST API design, database optimization, and real-time analytics tracking.
 
-Currently, two official plugins are available:
+## 🌟 Key Features
+- **Custom Short Codes:** Users can define their own branded links.
+- **Real-time Analytics:** Tracks total clicks and last-clicked timestamps.
+- **Data Visualization:** Interactive charts using Recharts to monitor link performance.
+- **Glassmorphic UI:** Modern, responsive interface built with Tailwind CSS and Framer Motion.
+- **Secure Architecture:** Robust error handling and CORS configurations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technical Stack
+- **Frontend:** React.js, Tailwind CSS, Framer Motion, Lucide React.
+- **Backend:** Node.js, Express.js.
+- **Database:** MongoDB (Atlas) with Mongoose ODM.
+- **API Testing:** Postman.
+- **Deployment:** - **Frontend:** Vercel (Optimized for Edge delivery).
+  - **Backend:** Koyeb (High-availability Instance).
 
-## React Compiler
+## 🏗️ Backend Architecture
+The core of this project lies in its scalable backend:
+- **Hybrid Deletion Logic:** Supports deletion via both MongoDB `_id` and `shortCode`.
+- **Atomic Increments:** Efficiently updates click counts using MongoDB persistence.
+- **Middleware Integration:** Implements Express JSON parsing and CORS for secure cross-origin communication.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✨ Developed by
+**Rehman-Dev288**
+*Passionate Full-Stack Developer | Backend Specialist*
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# 🚀 Live Demo & Repo
+- **Live Demo:** [https://urlminify-app.vercel.app/]

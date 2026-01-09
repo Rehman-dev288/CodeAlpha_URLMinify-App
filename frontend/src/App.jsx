@@ -370,7 +370,12 @@ const deleteUrl = async (id) => {
                         <ExternalLink className="w-5 h-5 text-brand-cyan" />
                       </a>
                       <button
-                        onClick={() => deleteUrl(url._id || url.shortCode)}
+                      onClick={() => {
+                      console.log("Attempting delete for:", url.shortCode);
+                      console.log("Using ID:", url._id);
+                       // Prefer ID, fallback to shortCode
+                         deleteUrl(url._id || url.shortCode); 
+                      }}
                         className="p-3 hover:bg-red-500/20 rounded-lg transition-all"
                         data-testid={`delete-button-${url._id}`}
                       >
