@@ -7,8 +7,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Toaster, toast } from "sonner";
 import "./App.css";
 
-const BACKEND_URL = "http://127.0.0.1:5000";
-const API = "http://127.0.0.1:5000/api";
+const BACKEND_URL = "https://bewildered-mickie-rehman-dev-8b2befcb.koyeb.app";
+const API = "https://bewildered-mickie-rehman-dev-8b2befcb.koyeb.app/api";
 
 const GlassCard = ({ children, className = "", hover = false }) => (
   <motion.div
