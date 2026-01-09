@@ -8,7 +8,7 @@ import { Toaster, toast } from "sonner";
 import "./App.css";
 
 const BACKEND_URL = "https://bewildered-mickie-rehman-dev-8b2befcb.koyeb.app";
-const API = "https://bewildered-mickie-rehman-dev-8b2befcb.koyeb.app/api";
+const API = "https://bewildered-mickie-rehman-dev-8b2befcb.koyeb.app/api"; 
 
 const GlassCard = ({ children, className = "", hover = false }) => (
   <motion.div
@@ -203,7 +203,7 @@ const Dashboard = () => {
 
   const deleteUrl = async (shortCode) => {
     try {
-      await axios.delete(`${API}/urls/${shortCode}`);
+      await axios.delete(`${API}/urls/${id}`);
       toast.success("URL deleted successfully");
       fetchUrls();
     } catch (error) {
@@ -369,7 +369,7 @@ const Dashboard = () => {
                         <ExternalLink className="w-5 h-5 text-brand-cyan" />
                       </a>
                       <button
-                        onClick={() => deleteUrl(url.shortCode)}
+                        onClick={() => deleteUrl(url._id)}
                         className="p-3 hover:bg-red-500/20 rounded-lg transition-all"
                         data-testid={`delete-button-${url.shortCode}`}
                       >

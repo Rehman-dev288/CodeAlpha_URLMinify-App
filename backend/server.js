@@ -82,6 +82,24 @@ app.get('/api/urls', async (req, res) => {
     }
 });
 
+// 4. Delete URL Route
+app.delete('/api/urls/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deletedUrl = await Url.findByIdAndDelete(id);
+
+        if (!deletedUrl) {
+            return res.status(404).json({ error: 'URL not found' });
+        }
+
+        console.log("URL deleted successfully:", id);
+        res.json({ message: 'URL deleted successfully' });
+    } catch (error) {
+        console.error("Delete Error:", error);
+        res.status(500).json({ error: 'Failed to delete URL' });
+    }
+});
+
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`Inbound requests listening on port ${PORT}`);
