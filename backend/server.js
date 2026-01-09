@@ -51,26 +51,28 @@ app.post('/api/shorten', async (req, res) => {
 });
 
 // 3. DELETE URL Route (Important: Must be above the redirect route)
-app.delete('/api/urls/:id', async (req, res) => {
+app.delete('/api/urls/:identifier', async (req, res) => {
     try {
-        const { id } = req.params;
-        
-        // Validation check
-        if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(400).json({ error: 'Invalid ID format' });
-        }
+        const { identifier } = req.params;
+        let deletedUrl;
 
-        const deletedUrl = await Url.findByIdAndDelete(id);
+        if (mongoose.Types.ObjectId.isValid(identifier)) {
+            deletedUrl = await Url.findByIdAndDelete(identifier);
+        } 
 
         if (!deletedUrl) {
-            return res.status(404).json({ error: 'URL not found in database' });
+            deletedUrl = await Url.findOneAndDelete({ shortCode: identifier });
         }
 
-        console.log("🗑️ URL deleted successfully:", id);
+        if (!deletedUrl) {
+            return res.status(404).json({ error: 'URL not found anywhere!' });
+        }
+
+        console.log("🗑️ Deleted successfully:", identifier);
         res.json({ message: 'URL deleted successfully' });
     } catch (error) {
         console.error("Delete Error:", error);
-        res.status(500).json({ error: 'Failed to delete URL' });
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
