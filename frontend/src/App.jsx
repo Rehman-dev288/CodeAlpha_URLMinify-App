@@ -201,7 +201,11 @@ const Dashboard = () => {
     }
   };
 
-  const deleteUrl = async (shortCode) => {
+  const deleteUrl = async (id) => {
+    if (!id) {
+    toast.error("ID not found!");
+    return;
+  }
     try {
       await axios.delete(`${API}/urls/${id}`);
       toast.success("URL deleted successfully");
