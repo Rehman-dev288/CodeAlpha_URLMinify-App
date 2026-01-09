@@ -9,7 +9,11 @@ const Url = require('./models/url.js');
 const app = express();
 
 // --- MIDDLEWARE ---
-app.use(cors());
+app.use(cors({
+  origin: ["https://urlminify-app.vercel.app", "http://localhost:5173"],
+  methods: ["GET", "POST", "DELETE", "PUT"],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
