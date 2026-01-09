@@ -19,7 +19,7 @@
 
 ## 🏗️ Backend Architecture
 The core of this project lies in its scalable backend:
-- **Hybrid Deletion Logic:** Supports deletion via both MongoDB `_id` and `shortCode`.
+- **Smart Hybrid Deletion:** A robust fallback mechanism that identifies and deletes records using either MongoDB ObjectIDs or custom ShortCodes, ensuring zero-fail operations.
 - **Atomic Increments:** Efficiently updates click counts using MongoDB persistence.
 - **Middleware Integration:** Implements Express JSON parsing and CORS for secure cross-origin communication.
 
@@ -27,5 +27,5 @@ The core of this project lies in its scalable backend:
 **Rehman-Dev288**
 *Passionate Full-Stack Developer | Backend Specialist*
 
-# 🚀 Live Demo & Repo
+# 🚀 Live Demo 
 - **Live Demo:** [https://urlminify-app.vercel.app/]
