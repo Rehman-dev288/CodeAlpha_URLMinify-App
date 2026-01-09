@@ -23,9 +23,17 @@ The core of this project lies in its scalable backend:
 - **Atomic Increments:** Efficiently updates click counts using MongoDB persistence.
 - **Middleware Integration:** Implements Express JSON parsing and CORS for secure cross-origin communication.
 
+## ⚙️ How It Works (The Workflow)
+1. **Request:** Frontend sends the long URL to the Express server.
+2. **Process:** Server generates a unique `shortId` and stores it in MongoDB.
+3. **Redirect:** The server listens for the short code, increments the click counter in the DB, and redirects the user to the destination.
+4. **Visualize:** The Dashboard fetches all links and renders analytics in real-time.
+   
 ### ✨ Developed by
 **Rehman-Dev288**
 *Passionate Full-Stack Developer | Backend Specialist*
 
 # 🚀 Live Demo 
 - **Live Demo:** [https://urlminify-app.vercel.app/]
+
+  > "Building scalable solutions and turning complex problems into simple, minified links." 🚀
