@@ -201,20 +201,17 @@ const Dashboard = () => {
     }
   };
 
-  const deleteUrl = async (id) => {
-    if (!id) {
-    toast.error("ID not found!");
-    return;
+const deleteUrl = async (id) => {
+  try {
+    console.log("Deleting URL with ID:", id); 
+    await axios.delete(`${API}/urls/${id}`);
+    toast.success("URL deleted successfully");
+    fetchUrls();
+  } catch (error) {
+    console.error("Delete Error details:", error.response || error);
+    toast.error("Failed to delete URL");
   }
-    try {
-      await axios.delete(`${API}/urls/${id}`);
-      toast.success("URL deleted successfully");
-      fetchUrls();
-    } catch (error) {
-      toast.error("Failed to delete URL");
-    }
-  };
-
+};
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     toast.success("Copied to clipboard!");
@@ -375,7 +372,7 @@ const Dashboard = () => {
                       <button
                         onClick={() => deleteUrl(url._id)}
                         className="p-3 hover:bg-red-500/20 rounded-lg transition-all"
-                        data-testid={`delete-button-${url.shortCode}`}
+                        data-testid={`delete-button-${url._id}`}
                       >
                         <Trash2 className="w-5 h-5 text-red-400" />
                       </button>
