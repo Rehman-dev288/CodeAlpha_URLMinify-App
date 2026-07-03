@@ -26,8 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 // --- DATABASE CONNECTION ---
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log("✨ MongoDB Connected Successfully for URLMinify"))
-  .catch((err) => console.error("❌ Database connection failed:", err));
+  .then(() => console.log("MongoDB Connected Successfully for URLMinify"))
+  .catch((err) => console.error("Database connection failed:", err));
 
 // --- ROUTES (Priority Order: Static > API > Dynamic) ---
 

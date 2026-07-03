@@ -22,8 +22,8 @@ import {
 import { Toaster, toast } from "sonner";
 import "./App.css";
 
-const BACKEND_URL = "https://codealpha-urlminify-app.onrender.com";
-const API = "https://codealpha-urlminify-app.onrender.com";
+const BACKEND_URL = "https://urlminify-backend.onrender.com";
+const API = "https://urlminify-backend.onrender.com/api";
 
 const GlassCard = ({ children, className = "", hover = false }) => (
   <motion.div
